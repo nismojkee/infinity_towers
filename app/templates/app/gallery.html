@@ -1,0 +1,50 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+	<main class="gallery-main">
+		<div class="gallery-full">
+			<div class="gallery-image">
+				{% for image in images %}
+					<img src='/static/app/images/gallery/full/{{image}}' style="box-sizing: border-box;">
+				{% endfor %}
+			</div>
+			<div class="gallery-thumbs">
+				{% for thumb in thumbs %}
+					<div class="thumbs-item"><img src='/static/app/images/gallery/thumbs/{{thumb}}' style="box-sizing: border-box;"></div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		$.cookie('level', '');
+		$.cookie('tower', '');
+		
+		$('.gallery-image').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			fade: true,
+			asNavFor: '.gallery-thumbs',
+			prevArrow: '<i class="arrow icon-left-open slick-prev"></i>',
+			nextArrow: '<i class="arrow icon-right-open slick-next"></i>',
+		});
+		$('.gallery-thumbs').slick({
+			arrows: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			asNavFor: '.gallery-image',
+			centerMode: true,
+			focusOnSelect: true,
+			dots: true,
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+    <main class="contact-main">
+        <div class="contact-image"></div>
+
+        <div class="contact-footer">
+            <ul class="fa-ul">
+                <li class="nav-menu_item">
+                    <span class="fa-li">
+                        <i class="icon-phone"></i>
+                    </span>
+                    +357 25 558 700
+                </li>
+                <li class="nav-menu_item">
+                    <span class="fa-li">
+                        <i class="icon-mail"></i>
+                    </span>
+                    info@prime-property.com
+                </li>
+            </ul>
+            <h3 class="brand-name">INFINITY TOWERS</h3>
+            <ul class="fa-ul">
+                <li class="nav-menu_item">
+                    <span class="fa-li">
+                        <i class="icon-phone"></i>
+                    </span>
+                    +357 25 315 300
+                </li>
+                <li class="nav-menu_item">
+                    <span class="fa-li">
+                        <i class="icon-mail"></i>
+                    </span>
+                    sales@prime-property.com
+                </li>
+            </ul>
+        </div>
+        <div class="contact-copyright" style="text-align: center; font-size: 25px;">
+            &copy; all rights reserved, 2019
+        </div>
+    </main>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $.cookie('level', '');
+    $.cookie('tower', '');
+</script>
+{% endblock %}

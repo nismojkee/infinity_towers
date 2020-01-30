@@ -1,0 +1,36 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+    <div class="index-slider">
+        <div class="index-description">
+            <p style="font-style: oblique;">
+                Designing luxury residences of such beauty<br>
+                and providing an intelligent, systematic and<br>
+                fully functional design that truly inspires the<br>
+                soul through creativity, elegance and style.<br>
+                Limassol luxury towers are created for those<br>
+                who live, work and play in place that represents<br>
+                the fast pace of a city and lifestyle of a<br>
+                Mediterranean resort.
+            </p>
+        </div>
+        <div class="index-slider_item"></div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+        $.cookie('level', '');
+        $.cookie('tower', '');
+
+        $(document).ready(function(){
+            $('.index-description').hide(1, function(){
+                setTimeout(function(){
+                    $('.index-description').fadeIn(200);
+                }, 2000);
+            });
+        });
+    </script>
+
+{% endblock %}

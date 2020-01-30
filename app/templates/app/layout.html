@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Towers | {{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/all.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/slick-theme.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/fontello.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/lightbox.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}" class="brand-name">INFINITY TOWERS</a>
+            <ul class="nav-menu">
+                <li>
+                    <a href="{% url 'apartments' %}" class="nav-menu_item">Apartments</a>
+                </li>
+                <li>
+                    <a href="{% url 'gallery' %}" class="nav-menu_item">Gallery</a>
+                </li>
+                <li>
+                    <a href="{% url 'location' %}" class="nav-menu_item">Location</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+{% block content %}{% endblock %}
+
+    <script src="{% static 'app/scripts/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'app/scripts/slick.min.js' %}"></script>
+    <script src="{% static 'app/scripts/jquery.cookie.js' %}"></script>
+    <script>
+        $(function () {
+            var location = window.location.href;
+            var cur_url = '/' + location.split('/').pop();
+         
+            $('.nav-menu li').each(function () {
+                var link = $(this).find('a').attr('href');
+         
+                if (cur_url == link) {
+                    $(this).addClass('current');
+                }
+            });
+        });
+        var origin = window.location.origin;
+        var time = new Date().getTime();
+        function refresh() {
+            if( (new Date().getTime() - time >= 180000) && (window.location.href != "{% url 'gallery' %}" ) ) 
+                window.open( origin + "{% url 'gallery' %}","_self");
+            else
+                setTimeout(refresh, 10000);
+        }
+        setTimeout(refresh, 10000);
+    </script>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

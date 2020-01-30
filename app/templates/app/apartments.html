@@ -1,0 +1,289 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+    <main class="apartments-main">
+        <div class="apartments-description">
+            <strong style="text-transform: uppercase; margin-left: 100px;">Major benefits:</strong>
+            <ul class="description-list">
+                <li>Sea front position</li>
+                <li>Unobstructed sea views from each apartment</li>
+                <li>Penthouses with private roof tops and pools</li>
+                <li>Unique location next to Limassol’s best 5 star hotels</li>
+                <li>Luxurious Spa and treatment rooms</li>
+                <li>Outdoor Pool Bar and Indoor Pool</li>
+                <li>Fully equipped Gym</li>
+                <li>Gardens and Parks</li>
+                <li>Adjacent Children’s play room</li>
+                <li>Tennis Court and Squash Court</li>
+                <li>24 hour concierge and security services</li>
+                <li>Top-of-the-line finishes</li>
+                <li>Water under floor heating</li>
+                <li>VRV conditioning</li>
+                <li>High ceilings (3.15 M)</li>
+            </ul>
+        </div>
+        <div class="apartments-image"></div>
+    </main>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            var pos = $('.apartments-image').offset();
+            var elem_left = pos.left;
+            var elem_top = pos.top;
+            var level = 0;
+
+            $(document).ready(function(){
+                $('.apartments-description').hide(1, function(){
+                    setTimeout(function(){
+                        $('.apartments-description').fadeIn(200);
+                    }, 1000);
+                });
+                $('.description-list').hide(1, function(){
+                    setTimeout(function(){
+                        $('.description-list').fadeIn(500);
+                    }, 2000);
+                });
+            });
+
+            $('.apartments-image').click(function(e){
+                var origin   = window.location.origin;
+
+                var Xinner = e.pageX - elem_left;
+                var Yinner = e.pageY - elem_top;
+
+                /* First tower */
+                if ( (Xinner > 630 && Xinner < 750) || (Xinner > 820 && Xinner < 1000) ) {
+                    switch(true) {
+                        case (Yinner > 795 && Yinner < 836):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '1');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 770 && Yinner < 795):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '2');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 735 && Yinner < 770):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '3');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 705 && Yinner < 735):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '4');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 675 && Yinner < 705):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '5');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 640 && Yinner < 675):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '6');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 610 && Yinner < 640):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '7');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 580 && Yinner < 610):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '8');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 550 && Yinner < 580):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '9');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 515 && Yinner < 550):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '10');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 485 && Yinner < 515):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '11');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 450 && Yinner < 485):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '12');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 420 && Yinner < 450):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '13');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 390 && Yinner < 420):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '14');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 360 && Yinner < 390):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '15');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 325 && Yinner < 360):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '16');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 295 && Yinner < 325):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '17');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 260 && Yinner < 295):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '18');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 230 && Yinner < 260):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '19');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 190 && Yinner < 230):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '20');
+                            $.cookie('tower', 'A');
+                            break;
+                        case (Yinner > 95 && Yinner < 190):
+                            window.open( origin + "{% url 'level' %}","_self");
+                            $.cookie('level', '21');
+                            $.cookie('tower', 'A');
+                            break;
+                        default:
+                            console.clear();
+                    }
+                }
+                else {
+                    if ( (Xinner > 1150 && Xinner < 1290) || (Xinner > 1350 && Xinner < 1435) ) {
+                        switch(true) {
+                            case (Yinner > 750 && Yinner < 780):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '1');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 725 && Yinner < 750):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '2');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 700 && Yinner < 725):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '3');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 675 && Yinner < 700):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '4');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 650 && Yinner < 675):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '5');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 625 && Yinner < 650):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '6');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 600 && Yinner < 625):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '7');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 575 && Yinner < 600):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '8');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 550 && Yinner < 575):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '9');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 525 && Yinner < 550):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '10');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 500 && Yinner < 525):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '11');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 475 && Yinner < 500):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '12');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 450 && Yinner < 475):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '13');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 420 && Yinner < 450):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '14');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 395 && Yinner < 420):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '15');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 360 && Yinner < 395):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '16');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 330 && Yinner < 360):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '17');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 300 && Yinner < 330):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '18');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 275 && Yinner < 300):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '19');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 250 && Yinner < 275):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '20');
+                                $.cookie('tower', 'B');
+                                break;
+                            case (Yinner > 160 && Yinner < 250):
+                                window.open( origin + "{% url 'level' %}","_self");
+                                $.cookie('level', '21');
+                                $.cookie('tower', 'B');
+                                break;
+                            default:
+                                console.clear();
+                        }
+                    }
+                    else {
+                        console.clear();
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+	<main class="level-main">
+		<div class="level-breadbreaks">
+			<a href="{% url 'apartments' %}">...</a> > <a href="{% url 'level' %}"> {{level}} </a> > {{title}}</a>
+		</div>
+		
+		<img class="level-image" style="background-image: url('{{bgimage|lower}}.jpg');">
+	</main>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+</script>
+{% endblock %}

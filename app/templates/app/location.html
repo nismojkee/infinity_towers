@@ -1,0 +1,19 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+    <main class="location-main">
+        <div class="location-image"></div>
+        <p class="content-text" style="text-align: justify; padding: 0 1em;">
+        	The new prestigious beachfront towers in Limassol are located in one of the most sought after neighbourhoods with the best 5-star hotels — Amathus Beach Hotel and Four Seasons. The project is conveniently positioned in a carefully selected, quiet, and safe neighbourhood in one of the most prestigious areas of Limassol city — Amathunda. This contemporary development is inspired by unobstructed sea and city view, surrounded by picturesque green landscapes. 
+        </p>
+    </main>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+	$.cookie('level', '');
+	$.cookie('tower', '');
+</script>
+{% endblock %}

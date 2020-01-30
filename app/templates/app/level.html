@@ -1,0 +1,31 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+	<main class="level-main">
+		<div class="level-breadbreaks">
+			<a href="{% url 'apartments' %}">Apartments > {{title}}</a>
+		</div>
+		
+		<img class="level-image" style="background-image: url('/static/app/images/level/level_{{bgimage}}.jpg');" usemap="#rooms">
+
+		<map name="rooms">
+		    <area class="area" target="" alt="" data-lightbox="1" title="" href="{% url 'room' %}" coords="{{coord_left}}" shape="poly">
+		    <area class="area" target="" alt="" data-lightbox="2" title="" href="{% url 'room' %}" coords="{{coord_mid_left}}" shape="poly">
+		    <area class="area" target="" alt="" data-lightbox="3" title="" href="{% url 'room' %}" coords="{{coord_mid}}" shape="poly">
+		    <area class="area" target="" alt="" data-lightbox="4" title="" href="{% url 'room' %}" coords="{{coord_mid_right}}" shape="poly">
+		    <area class="area" target="" alt="" data-lightbox="5" title="" href="{% url 'room' %}" coords="{{coord_right}}" shape="poly">
+		</map>
+	</main>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+	$('.area').click(function(){
+		var side = $(this).data("lightbox");
+		$.cookie('room', side);
+	});
+</script>
+{% endblock %}
